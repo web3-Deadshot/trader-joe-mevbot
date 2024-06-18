@@ -114,6 +114,7 @@ const sidebars: SidebarsConfig = {
     "features/mfa",
     "features/mpc",
     "features/mobile",
+    "features/nft-services",
     // "features/passkeys",
     "features/server-side-verification",
     "features/session-management",
@@ -222,8 +223,18 @@ const sidebars: SidebarsConfig = {
         "auth-provider-setup/auth-provider-setup",
         "auth-provider-setup/verifiers",
         "auth-provider-setup/aggregate-verifier",
-        "auth-provider-setup/authentication-service-providers",
         "auth-provider-setup/byo-jwt-provider",
+        {
+          type: "category",
+          label: "Authentication Service Providers",
+          items: [
+            "auth-provider-setup/authentication-service-providers/auth0-service-provider",
+            "auth-provider-setup/authentication-service-providers/aws-cognito-service-provider",
+            "auth-provider-setup/authentication-service-providers/firebase-service-provider",
+          ],
+          collapsible: true,
+          collapsed: false,
+        },
         {
           type: "category",
           label: "Social Providers",
@@ -235,6 +246,7 @@ const sidebars: SidebarsConfig = {
             "auth-provider-setup/social-providers/twitch",
             "auth-provider-setup/social-providers/discord",
             "auth-provider-setup/social-providers/apple",
+            "auth-provider-setup/social-providers/kakao",
             "auth-provider-setup/social-providers/linkedin",
             "auth-provider-setup/social-providers/github",
             "auth-provider-setup/social-providers/line",
@@ -460,6 +472,19 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: "category",
+              label: "Neon",
+              items: [
+                "connect-blockchain/evm/neon/neon",
+                "connect-blockchain/evm/neon/web",
+                "connect-blockchain/evm/neon/android",
+                "connect-blockchain/evm/neon/ios",
+                "connect-blockchain/evm/neon/react-native",
+                "connect-blockchain/evm/neon/flutter",
+                "connect-blockchain/evm/neon/unity",
+              ],
+            },
+            {
+              type: "category",
               label: "Optimism",
               items: [
                 "connect-blockchain/evm/optimism/optimism",
@@ -589,6 +614,7 @@ const sidebars: SidebarsConfig = {
         "troubleshooting/vite-issues",
         "troubleshooting/svelte-issues",
         "troubleshooting/metro-issues",
+        "troubleshooting/metro-issues-mpc",
         "troubleshooting/jwt-errors",
         "troubleshooting/supported-browsers",
         "troubleshooting/react-big-int-error",
@@ -694,17 +720,35 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Plug and Play Android SDK",
-          items: ["migration-guides/android-v4-to-v5"],
+          items: [
+            "migration-guides/android-v7.2-to-v7.3",
+            "migration-guides/android-v7.1.2-to-v7.2",
+            "migration-guides/android-v7.1.1-to-v7.1.2",
+            "migration-guides/android-v6-to-v6.1",
+            "migration-guides/android-v5-to-v6",
+            "migration-guides/android-v4-to-v5",
+          ],
         },
         {
           type: "category",
           label: "Plug and Play iOS SDK",
-          items: ["migration-guides/ios-v6-to-v7"],
+          items: [
+            "migration-guides/ios-v8.2-to-v8.3",
+            "migration-guides/ios-v8.1-to-v8.2",
+            "migration-guides/ios-v8-to-v8.1",
+            "migration-guides/ios-v7-to-v8",
+            "migration-guides/ios-v6-to-v7",
+          ],
         },
         {
           type: "category",
           label: "Plug and Play React Native SDK",
           items: ["migration-guides/rn-v4-to-v5", "migration-guides/rn-v3-to-v4"],
+        },
+        {
+          type: "category",
+          label: "Plug and Play Flutter SDK",
+          items: ["migration-guides/flutter-v3-to-v4"],
         },
         {
           type: "category",
@@ -737,6 +781,7 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/web/modal/install",
             "sdk/pnp/web/modal/initialize",
             "sdk/pnp/web/modal/usage",
+            "sdk/pnp/web/modal/modal-hooks",
             {
               type: "category",
               collapsible: true,
@@ -753,7 +798,7 @@ const sidebars: SidebarsConfig = {
             {
               type: "link",
               label: "Playground",
-              href: "https://w3a.link/pnp-playground",
+              href: "https://pnp-modal-playground.vercel.app",
             },
             {
               type: "link",
@@ -775,6 +820,7 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/web/no-modal/install",
             "sdk/pnp/web/no-modal/initialize",
             "sdk/pnp/web/no-modal/usage",
+            "sdk/pnp/web/no-modal/no-modal-hooks",
             {
               type: "category",
               collapsible: true,
@@ -787,6 +833,11 @@ const sidebars: SidebarsConfig = {
                 "sdk/pnp/web/no-modal/initiate-topup",
                 "sdk/pnp/web/no-modal/show-wallet-connect",
               ],
+            },
+            {
+              type: "link",
+              label: "Playground",
+              href: "https://pnp-no-modal-playground.vercel.app",
             },
             {
               type: "link",
@@ -804,6 +855,9 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Adapters",
           items: [
+            "sdk/pnp/web/adapters/adapters",
+            "sdk/pnp/web/adapters/default-evm-adapter",
+            "sdk/pnp/web/adapters/default-solana-adapter",
             "sdk/pnp/web/adapters/adapters",
             "sdk/pnp/web/adapters/openlogin",
             "sdk/pnp/web/adapters/torus-evm",
@@ -842,6 +896,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-android-playground",
+        },
+        {
+          type: "link",
           label: "Support Forum",
           href: "https://web3auth.io/community/c/help-pnp/pnp-android/16",
         },
@@ -871,6 +930,11 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/ios/mfa",
             "sdk/pnp/ios/dapp-share",
           ],
+        },
+        {
+          type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-ios-playground",
         },
         {
           type: "link",
@@ -904,6 +968,16 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/react-native/dapp-share",
           ],
         },
+        // {
+        //   type: "link",
+        //   label: "Playground Android",
+        //   href: "https://w3a.link/pnp-rn-android-playground",
+        // },
+        // {
+        //   type: "link",
+        //   label: "Playground iOS",
+        //   href: "https://w3a.link/pnp-rn-ios-playground",
+        // },
         {
           type: "link",
           label: "Support Forum",
@@ -977,6 +1051,11 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/unity/mfa",
             "sdk/pnp/unity/dapp-share",
           ],
+        },
+        {
+          type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-unity-playground",
         },
         {
           type: "link",
@@ -1160,7 +1239,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "MPC Core Kit SDK",
+      label: "MPC Core Kit JS SDK",
       items: [
         "sdk/core-kit/mpc-core-kit/mpc-core-kit",
         "sdk/core-kit/mpc-core-kit/install",
@@ -1305,13 +1384,23 @@ const sidebars: SidebarsConfig = {
       value: "<span class='sidebarHeading'>Helper SDKs</span>",
       defaultStyle: true,
     },
-    "sdk/wallet-services/wallet-services",
+    {
+      type: "category",
+      label: "Wallet Services",
+      items: ["sdk/wallet-services/wallet-services", "sdk/wallet-services/wallet-services-hooks"],
+    },
+    "sdk/passkeys-sfa/passkeys-sfa",
     {
       type: "category",
       label: "Providers",
       items: [
         "sdk/providers/providers",
-        "sdk/providers/evm",
+        {
+          type: "category",
+          label: "EVM",
+          items: ["sdk/providers/evm", "sdk/providers/evm-mpc"],
+          collapsed: false,
+        },
         "sdk/providers/solana",
         "sdk/providers/xrpl",
         "sdk/providers/common",

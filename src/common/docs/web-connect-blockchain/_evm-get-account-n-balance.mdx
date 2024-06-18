@@ -6,6 +6,7 @@ defaultValue="web3"
 values={[
   { label: "web3.js", value: "web3" },
   { label: "ethers.js", value: "ethers.js" },
+  { label: "viem", value: "viem" },
 ]}
 >
 <TabItem value="web3">
@@ -15,7 +16,7 @@ values={[
   Use code from the above Initializing Provider here
 */
 
-// web3 is const web3 = new Web3(web3authProvider); from above.
+// web3 is const web3 = new Web3(web3Auth.provider); from above.
 
 // Get user's Ethereum public address
 const address = (await web3.eth.getAccounts())[0];
@@ -34,7 +35,7 @@ const balance = web3.utils.fromWei(
   Use code from the above Initializing Provider here
 */
 
-// provider is const provider = new ethers.providers.Web3Provider(web3authProvider); from above.
+// provider is const provider = new ethers.providers.Web3Provider(web3Auth.provider); from above.
 
 // For ethers v5
 // const signer = ethersProvider.getSigner();
@@ -51,6 +52,27 @@ const address = signer.getAddress();
 const balance = ethers.utils.formatEther(
   await provider.getBalance(address), // Balance is in wei
 );
+```
+
+</TabItem>
+<TabItem value="viem">
+
+```tsx
+const publicClient = createPublicClient({
+  chain: mainnet, // for mainnet
+  transport: custom(this.provider),
+});
+
+const walletClient = createWalletClient({
+  chain: mainnet,
+  transport: custom(this.provider),
+});
+
+// Get user's Ethereum public address
+const address = await walletClient.getAddresses();
+
+// Get user's balance in ether
+const balance = await publicClient.getBalance({ address: address[0] });
 ```
 
 </TabItem>
