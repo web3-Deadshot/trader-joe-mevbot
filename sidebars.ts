@@ -114,6 +114,7 @@ const sidebars: SidebarsConfig = {
     "features/mfa",
     "features/mpc",
     "features/mobile",
+    "features/nft-services",
     // "features/passkeys",
     "features/server-side-verification",
     "features/session-management",
@@ -556,6 +557,7 @@ const sidebars: SidebarsConfig = {
             "connect-blockchain/other/other",
             "connect-blockchain/other/algorand",
             "connect-blockchain/other/aptos",
+            "connect-blockchain/other/bitcoin",
             "connect-blockchain/other/cosmos",
             "connect-blockchain/other/immutablex",
             "connect-blockchain/other/near",
@@ -797,7 +799,7 @@ const sidebars: SidebarsConfig = {
             {
               type: "link",
               label: "Playground",
-              href: "https://w3a.link/pnp-playground",
+              href: "https://pnp-modal-playground.vercel.app",
             },
             {
               type: "link",
@@ -832,6 +834,11 @@ const sidebars: SidebarsConfig = {
                 "sdk/pnp/web/no-modal/initiate-topup",
                 "sdk/pnp/web/no-modal/show-wallet-connect",
               ],
+            },
+            {
+              type: "link",
+              label: "Playground",
+              href: "https://pnp-no-modal-playground.vercel.app",
             },
             {
               type: "link",
@@ -890,6 +897,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-android-playground",
+        },
+        {
+          type: "link",
           label: "Support Forum",
           href: "https://web3auth.io/community/c/help-pnp/pnp-android/16",
         },
@@ -919,6 +931,11 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/ios/mfa",
             "sdk/pnp/ios/dapp-share",
           ],
+        },
+        {
+          type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-ios-playground",
         },
         {
           type: "link",
@@ -952,6 +969,16 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/react-native/dapp-share",
           ],
         },
+        // {
+        //   type: "link",
+        //   label: "Playground Android",
+        //   href: "https://w3a.link/pnp-rn-android-playground",
+        // },
+        // {
+        //   type: "link",
+        //   label: "Playground iOS",
+        //   href: "https://w3a.link/pnp-rn-ios-playground",
+        // },
         {
           type: "link",
           label: "Support Forum",
@@ -1026,6 +1053,11 @@ const sidebars: SidebarsConfig = {
             "sdk/pnp/unity/show-wallet-UI",
             "sdk/pnp/unity/dapp-share",
           ],
+        },
+        {
+          type: "link",
+          label: "Playground",
+          href: "https://w3a.link/pnp-unity-playground",
         },
         {
           type: "link",
